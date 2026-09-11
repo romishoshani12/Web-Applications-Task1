@@ -7,9 +7,65 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h1>רומי שושני</h1>
-        <p>מפתחת DevOps</p>
+    <main id="main-content">
+        <section class="hero" id="home" aria-labelledby="profile-name">
+            <div class="hero-content">
+                <p class="eyebrow">DIGITAL BUSINESS CARD</p>
+                <h1 class="full-name" id="profile-name">רומי שושני</h1>
+                <p class="job-title">מפתחת DevOps</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#contact">ליצירת קשר</a>
+                    <a class="button button-secondary" href="#projects">לפרויקטים שלי</a>
+                </div>
+            </div>
+
+            <figure class="profile-visual">
+                <img
+                    class="profile-image"
+                    src="profile-image.jpg"
+                    alt="תמונת פרופיל"
+                >
+            </figure>
+        </section>
+
+        <section class="content-section about-section" id="about" aria-labelledby="about-title">
+            <div class="section-heading">
+                <p class="section-number">01</p>
+                <div>
+                    <p class="section-kicker">מי אני</p>
+                    <h2 class="section-title" id="about-title">קצת עליי</h2>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-copy">
+                    <p>
+                        את ההתנסות שלי בתחום התחלתי בקורס DevOps. לאחר הקורס הצטרפתי לצוות DBA,
+                        ובמשך שנה וחצי צברתי ניסיון בעבודה עם מסדי נתונים ותשתיות ארגוניות.
+                    </p>
+                    <p>
+                        בהמשך חזרתי להדריך בקורס DevOps, ולאחר ההדרכה אוישתי לתפקיד ראש צוות DBA במשך
+                        שנה וחצי. כיום אני עוסקת ב-DevOps ומשלבת בעבודה ידע טכני, ראייה מערכתית
+                        וניהול משימות.
+                    </p>
+                </div>
+
+                <ul class="highlights-list" aria-label="תחומי התמחות מרכזיים">
+                    <li>
+                        <span class="highlight-icon" aria-hidden="true">01</span>
+                        <span>אוטומציה ותהליכי CI/CD</span>
+                    </li>
+                    <li>
+                        <span class="highlight-icon" aria-hidden="true">02</span>
+                        <span>מסדי נתונים ותשתיות ארגוניות</span>
+                    </li>
+                    <li>
+                        <span class="highlight-icon" aria-hidden="true">03</span>
+                        <span>הדרכה והובלת צוותים</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 </body>
 </html>
