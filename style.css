@@ -18,7 +18,7 @@ body {
     --surface-soft: #fff0f5;
     --surface-strong: #f9d7e5;
     --primary: #fac1db;
-    --primary-strong: #f5abce;
+    --primary-strong: #f582b8;
     --primary-soft: #f6c5d9;
     --text: #9c617f;
     --text-soft: #6f5964;
@@ -66,14 +66,49 @@ img {
     background: var(--primary);
     color: #ffffff;
 }
-/* Main layout */
+/* 4. Shared layout and section headings */
 main {
     width: min(1120px, calc(100% - 2rem));
     margin: 2.25rem auto 0;
 }
 
-.hero {
+.hero,
+.content-section {
     scroll-margin-top: 6rem;
+}
+
+.content-section {
+    padding: clamp(4.5rem, 9vw, 7.5rem) 0 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-number {
+    margin: 0.3rem 0 0;
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.section-kicker {
+    margin: 0 0 0.15rem;
+    color: var(--primary);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+}
+
+.section-title {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(1.8rem, 4vw, 2.65rem);
+    line-height: 1.2;
 }
 /* 5. Hero */
 .hero {
@@ -210,4 +245,63 @@ main {
     border-radius: 8rem 8rem 1.75rem 1.75rem;
     object-fit: cover;
     box-shadow: var(--card-shadow);
+}
+/* 6. About */
+.about-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(1.7rem, 4vw, 3rem);
+    border: 1px solid var(--border);
+    border-radius: 1.75rem;
+    background: var(--surface);
+    box-shadow: var(--card-shadow);
+}
+
+.about-copy p {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 1.02rem;
+}
+
+.about-copy p + p {
+    margin-top: 1rem;
+}
+
+.highlights-list {
+    display: grid;
+    gap: 0.75rem;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.highlights-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem;
+    border-radius: 1rem;
+    background: var(--surface-soft);
+    color: var(--text-soft);
+}
+
+.highlight-icon {
+    display: grid;
+    width: 2.35rem;
+    height: 2.35rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary-strong);
+    color: var(--surface);
+    font-size: 0.66rem;
+    font-weight: 900;
+}
+
+.highlight-content {
+    color: var(--text-soft);
+    font-size: 1.02rem;
+    font-weight: 600;
 }
