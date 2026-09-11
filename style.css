@@ -18,7 +18,7 @@ body {
     --surface-soft: #fff0f5;
     --surface-strong: #f9d7e5;
     --primary: #fac1db;
-    --primary-strong: #f582b8;
+    --primary-strong: #f5abce;
     --primary-soft: #f6c5d9;
     --text: #9c617f;
     --text-soft: #6f5964;
@@ -65,4 +65,149 @@ img {
 ::selection {
     background: var(--primary);
     color: #ffffff;
+}
+/* Main layout */
+main {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 2.25rem auto 0;
+}
+
+.hero {
+    scroll-margin-top: 6rem;
+}
+/* 5. Hero */
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.85fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    overflow: hidden;
+    min-height: 36rem;
+    padding: clamp(2rem, 6vw, 4.75rem);
+    border: 1px solid var(--border);
+    border-radius: 2.25rem;
+    background:
+        linear-gradient(135deg, transparent 35%, rgba(240, 123, 173, 0.08)),
+        var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.hero::before {
+    position: absolute;
+    top: -7rem;
+    right: -5rem;
+    width: 17rem;
+    height: 17rem;
+    border: 1px solid var(--primary-soft);
+    border-radius: 50%;
+    content: "";
+    opacity: 0.48;
+}
+
+.hero::after {
+    position: absolute;
+    right: 6rem;
+    bottom: -8rem;
+    width: 19rem;
+    height: 19rem;
+    border-radius: 50%;
+    background: var(--surface-soft);
+    content: "";
+    opacity: 0.72;
+}
+
+.hero-content,
+.profile-visual {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    margin: 0 0 1rem;
+    color: var(--primary);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.19em;
+}
+
+.full-name {
+    max-width: 10ch;
+    margin: 0;
+    color: var(--primary-strong);
+    font-size: clamp(3rem, 8vw, 5.7rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.job-title {
+    margin: 1.2rem 0 0;
+    color: var(--text-soft);
+    font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+    font-weight: 800;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.7rem 1.35rem;
+    border: 1px solid var(--primary-strong);
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-2px);
+}
+
+.button:focus-visible {
+    outline: 3px solid var(--primary-soft);
+    outline-offset: 3px;
+}
+
+.button-primary {
+    background: var(--primary-strong);
+    color: var(--surface);
+    box-shadow: 0 9px 24px rgba(126, 33, 77, 0.2);
+}
+
+.button-secondary {
+    background: transparent;
+    color: var(--primary-strong);
+}
+
+.profile-visual {
+    width: min(100%, 22rem);
+    margin: 0 auto;
+}
+
+.profile-visual::before {
+    position: absolute;
+    inset: 1rem -1rem -1rem 1rem;
+    z-index: -1;
+    border-radius: 8rem 8rem 1.75rem 1.75rem;
+    background: var(--primary-soft);
+    content: "";
+    transform: rotate(-3deg);
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 0.45rem solid var(--surface);
+    border-radius: 8rem 8rem 1.75rem 1.75rem;
+    object-fit: cover;
+    box-shadow: var(--card-shadow);
 }
