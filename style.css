@@ -1,0 +1,68 @@
+/* 1. Reset and theme variables */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    --background: #fff8fb;
+    --background-accent: #fde7f0;
+    --surface: #ffffff;
+    --surface-soft: #fff0f5;
+    --surface-strong: #f9d7e5;
+    --primary: #fac1db;
+    --primary-strong: #f582b8;
+    --primary-soft: #f6c5d9;
+    --text: #9c617f;
+    --text-soft: #6f5964;
+    --border: #edcad8;
+    --header-background: rgba(255, 248, 251, 0.88);
+    --shadow: 0 24px 65px rgba(118, 44, 78, 0.14);
+    --card-shadow: 0 14px 35px rgba(118, 44, 78, 0.1);
+
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(244, 174, 205, 0.4), transparent 29rem),
+        linear-gradient(180deg, var(--background) 0%, #ffffff 55%, var(--background) 100%);
+    color: var(--text);
+    font-family: Arial, "Segoe UI", sans-serif;
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+    position: fixed;
+    inset: auto auto -10rem -10rem;
+    z-index: -1;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    background: var(--background-accent);
+    content: "";
+    filter: blur(80px);
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--primary);
+    color: #ffffff;
+}
