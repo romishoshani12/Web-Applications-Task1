@@ -92,6 +92,27 @@ input {
     background: var(--primary);
     color: #ffffff;
 }
+
+/* 2. Accessibility helpers */
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 100;
+    padding: 0.65rem 1rem;
+    border-radius: 0.65rem;
+    background: var(--primary-strong);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(-180%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 /* 3. Header, navigation and theme control */
 .site-header {
     position: sticky;
@@ -231,6 +252,7 @@ input {
 .theme-toggle:checked + .theme-toggle-label .sun-icon {
     display: inline;
 }
+
 /* 4. Shared layout and section headings */
 main {
     width: min(1120px, calc(100% - 2rem));
@@ -275,6 +297,7 @@ main {
     font-size: clamp(1.8rem, 4vw, 2.65rem);
     line-height: 1.2;
 }
+
 /* 5. Hero */
 .hero {
     position: relative;
@@ -411,6 +434,7 @@ main {
     object-fit: cover;
     box-shadow: var(--card-shadow);
 }
+
 /* 6. About */
 .about-content {
     display: grid;
@@ -544,6 +568,7 @@ main {
     font-size: 0.88rem;
     font-weight: 800;
 }
+
 /* 8. Projects */
 .projects-grid {
     display: grid;
@@ -621,6 +646,7 @@ main {
     font-size: 0.72rem;
     font-weight: 800;
 }
+
 /* 9. Contact */
 .contact-section {
     display: grid;
@@ -645,7 +671,6 @@ main {
 .contact-intro .section-kicker {
     opacity: 0.7;
 }
-
 
 .contact-list {
     display: grid;
@@ -718,6 +743,7 @@ main {
     font-size: 1rem;
     opacity: 0.75;
 }
+
 /* 10. Footer */
 .site-footer {
     display: flex;
@@ -745,4 +771,189 @@ main {
 .site-footer a:focus-visible {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
+}
+
+/* 11. Responsive layout */
+@media (max-width: 900px) {
+    .navigation-container {
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+    }
+
+    .brand-name {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1.05fr) minmax(15rem, 0.95fr);
+        gap: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card:last-child {
+        grid-column: 1 / -1;
+        min-height: 16rem;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .site-header {
+        border-color: var(--border);
+    }
+
+    .navigation-container {
+        grid-template-columns: 1fr auto;
+        gap: 0.65rem 1rem;
+        padding: 0.65rem 0;
+    }
+
+    .brand-name {
+        display: inline;
+    }
+
+    .main-navigation {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        overflow-x: auto;
+        padding-bottom: 0.15rem;
+        scrollbar-width: none;
+    }
+
+    .main-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navigation-list {
+        justify-content: flex-start;
+        width: max-content;
+        min-width: 100%;
+        gap: 1.35rem;
+    }
+
+    .navigation-link {
+        font-size: 0.82rem;
+    }
+
+    main {
+        margin-top: 1.25rem;
+    }
+
+    .hero,
+    .content-section {
+        scroll-margin-top: 8.5rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 2rem;
+        border-radius: 1.65rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .full-name {
+        max-width: none;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .profile-visual {
+        width: min(100%, 20rem);
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card,
+    .project-card:last-child {
+        grid-column: auto;
+        min-height: 17rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .navigation-container,
+    main,
+    .site-footer {
+        width: min(100% - 1.15rem, 1120px);
+    }
+
+    .brand-name {
+        font-size: 0.9rem;
+    }
+
+    .brand-mark {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .theme-toggle-label {
+        min-width: 2.65rem;
+        padding: 0.58rem;
+    }
+
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .full-name {
+        font-size: clamp(2.7rem, 16vw, 4rem);
+    }
+
+    .hero-actions {
+        display: grid;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .section-heading {
+        gap: 0.7rem;
+    }
+
+    .about-content,
+    .skills-card,
+    .project-card,
+    .contact-section {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }
