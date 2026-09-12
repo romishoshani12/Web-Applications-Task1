@@ -456,3 +456,27 @@ main {
     font-size: 0.72rem;
     font-weight: 800;
 }
+/* 9. Contact */
+.contact-section {
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+    margin-top: clamp(4.5rem, 9vw, 7.5rem);
+    padding: clamp(2rem, 6vw, 4rem);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    background: var(--primary-strong);
+    color: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.contact-intro .section-kicker,
+.contact-intro .section-title,
+.contact-intro p {
+    color: inherit;
+}
+
+.contact-intro .section-kicker {
+    opacity: 0.7;
+}
